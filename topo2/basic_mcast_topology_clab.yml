@@ -1,0 +1,28 @@
+---
+name: basic_multicast_lab
+topology:
+  kinds:
+    arista_ceos:
+      image: ceos:4.30.5M
+  nodes:
+    FHR:
+      kind: arista_ceos
+      startup-config: init-configs/FHR.cfg
+    RP:
+      kind: arista_ceos
+      startup-config: init-configs/RP.cfg
+    LHR:
+      kind: arista_ceos
+      startup-config: init-configs/LHR.cfg
+    Sender:
+      kind: arista_ceos
+      startup-config: init-configs/Sender.cfg
+    Receiver:
+      kind: arista_ceos
+      startup-config: init-configs/Receiver.cfg
+  links:
+    - endpoints: ["Sender:eth1", "FHR:eth1"]
+    - endpoints: ["FHR:eth2", "RP:eth2"]
+    - endpoints: ["RP:eth3", "LHR:eth3"]
+    - endpoints: ["LHR:eth1", "Receiver:eth1"]
+
