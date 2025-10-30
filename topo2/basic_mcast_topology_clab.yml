@@ -16,7 +16,7 @@ topology:
       startup-config: ./init-configs/LHR.cfg
     Sender:
       kind: arista_ceos
-      startup-config: .init-configs/Sender.cfg
+      startup-config: ./init-configs/Sender.cfg
     Receiver:
       kind: arista_ceos
       startup-config: ./init-configs/Receiver.cfg
