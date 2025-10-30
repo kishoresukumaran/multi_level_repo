@@ -7,22 +7,22 @@ topology:
   nodes:
     sw1:
       kind: arista_ceos
-      startup-config: init-configs/sw1.cfg
+      startup-config: ./init-configs/sw1.cfg
     sw2:
       kind: arista_ceos
-      startup-config: init-configs/sw2.cfg
+      startup-config: ./init-configs/sw2.cfg
     sw3:
       kind: arista_ceos
-      startup-config: init-configs/sw3.cfg
+      startup-config: ./init-configs/sw3.cfg
     sw4:
       kind: arista_ceos
-      startup-config: init-configs/sw4.cfg
+      startup-config: ./init-configs/sw4.cfg
     src:
       kind: arista_ceos
-      startup-config: init-configs/src.cfg
+      startup-config: ./init-configs/src.cfg
     rcvr:
       kind: arista_ceos
-      startup-config: init-configs/rcvr.cfg
+      startup-config: ./init-configs/rcvr.cfg
   links:
     - endpoints: ["sw1:eth1", "rcvr:eth1"]
     - endpoints: ["sw1:eth3", "sw2:eth3"]
